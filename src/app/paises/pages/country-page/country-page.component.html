@@ -1,0 +1,65 @@
+<ng-template #loading>
+  <div class="alert alert-info text-center">
+    Espere por favor
+  </div>
+</ng-template>
+
+
+<div *ngIf="country; else loading">
+
+  <div class="row">
+
+    <div class="col-12">
+      <h2>País: <strong> {{ country.name.common }} </strong></h2>
+    </div>
+
+  </div>
+
+
+  <div class="row">
+
+    <div class="col-4 d-flex justify-content-center">
+      <img [src]="country.flags.svg"
+        [alt]="country.name.common"
+        class="img-thumbnail"
+        (load)="onLoad()"
+        [ngStyle]="{ display: hasLoaded ? '' : 'none' }">
+
+      <img *ngIf="!hasLoaded" src="assets/loader.svg" height="35" width="35" class="mt-5" />
+    </div>
+
+
+    <div class="col">
+      <h3>Información:</h3>
+
+      <ul class="list-group">
+        <li class="list-group-item"><strong>Población:</strong> {{ country.population | number }} </li>
+        <li class="list-group-item"><strong>Código:</strong> {{ country.cca3 }} </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <div class="row mt-2">
+    <div class="col">
+      <h3>Traducciones:</h3>
+
+      <div class="d-flex flex-wrap">
+        <span class="badge bg-primary mx-1 mb-2"> {{ country.translations['ara'].common }} </span>
+        <span class="badge bg-secondary mx-1 mb-2"> {{ country.translations['bre'].common }} </span>
+        <span class="badge bg-success mx-1 mb-2"> {{ country.translations['ces'].common }} </span>
+        <span class="badge bg-danger mx-1 mb-2"> {{ country.translations['cym'].common }} </span>
+        <span class="badge bg-info mx-1 mb-2"> {{ country.translations['deu'].common }} </span>
+        <span class="badge bg-dark mx-1 mb-2"> {{ country.translations['est'].common }} </span>
+        <span class="badge bg-warning mx-1 mb-2"> {{ country.translations['fin'].common }} </span>
+        <span class="badge bg-primary mx-1 mb-2"> {{ country.translations['fra'].common }} </span>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</div>

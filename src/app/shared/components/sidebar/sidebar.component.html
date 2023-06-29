@@ -1,17 +1,47 @@
 
 
-<div class="bg-dark border-right p-3" id="sidebar">
 
-  <h3 class="text-info">GifsApp:</h3>
-  <hr class="text-info">
+<h2>Países:</h2>
+<hr>
 
-  <div class="list-group list-reset">
 
-    <button *ngFor="let tag of Tags"
-        (click)="searchTag(tag)"
-        class="list-group-item list-group-item-active mb-1 bg-info border-0">
-      {{ tag | titlecase }}
-    </button>
-  </div>
+<ul class="list-group">
+<!--
+  <li routerLink=""
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="list-group-item">
+    Home Page
+  </li>
 
-</div>
+  <li routerLink="about"
+      routerLinkActive="active"
+      class="list-group-item">
+    About Page
+  </li>
+
+  <li routerLink="contact"
+      routerLinkActive="active"
+      class="list-group-item">
+    Contact Page
+  </li> -->
+
+  <li routerLink="countries/by-capital"
+      routerLinkActive="active"
+      class="list-group-item">
+    Por Capital
+  </li>
+
+  <li routerLink="countries/by-country"
+      routerLinkActive="active"
+      class="list-group-item">
+    Por País
+  </li>
+
+  <li routerLink="countries/by-region"
+      routerLinkActive="active"
+      class="list-group-item">
+    Por Region
+  </li>
+
+</ul>

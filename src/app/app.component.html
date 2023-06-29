@@ -1,12 +1,15 @@
 
 
-<div class="d-flex">
+<div class="row mt-4">
 
-  <!-- Sidebar -->
-  <shared-sidebar></shared-sidebar>
+  <div class="col-3">
+    <shared-sidebar></shared-sidebar>
+  </div>
 
-
-  <!-- Home Page -->
-  <gifs-home-page class="flex-fill"></gifs-home-page>
+  <div class="col">
+    <!-- <shared-home-page></shared-home-page> -->
+    <!-- <shared-about-page></shared-about-page> -->
+    <router-outlet></router-outlet>
+  </div>
 
 </div>
