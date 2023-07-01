@@ -39,7 +39,6 @@ export class CountryPageComponent implements OnInit {
 
   }
 
-
   onLoad(): void {
     this.hasLoaded = true;
   }
